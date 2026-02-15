@@ -2,9 +2,19 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+&zip_temp_layer {
+    excluded-positions = <
+        31
+        32
+        37
+        38
+        39
+    >;
+};
+
 &trackball_listener {
     input-processors
-        = <&zip_temp_layer 6 1500>,
+        = <&zip_temp_layer 6 5000>,
           <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
     scroll_input_listener {
