@@ -30,15 +30,15 @@
 
         number {
             bindings = <
-&trans  &trans        &trans        &trans        &trans     &trans                        &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp ASTERISK                  &trans  &kp F7  &kp F8  &kp F9  &kp F12  &trans
-&trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS  &kp SLASH     &trans  &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp PERCENT   &trans  &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-&trans  &kp N0        &kp PERIOD    &kp COMMA     &trans     &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &trans        &trans        &trans        &trans     &trans                                &trans          &trans  &trans  &trans           &trans   &trans
+&trans  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp ASTERISK                          &trans          &kp F7  &kp F8  &kp F9           &kp F12  &trans
+&trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS  &kp SLASH     &trans  &trans          &trans          &kp F4  &kp F5  &kp F6           &kp F11  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp PERCENT   &trans  &kp UP_ARROW    &trans          &kp F1  &kp F2  &kp F3           &kp F10  &trans
+&trans  &kp N0        &kp PERIOD    &kp COMMA     &trans     &trans        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &trans  &trans  &kp RIGHT_ARROW  &trans   &trans
             >;
         };
 
-        layer_6 {
+        marks {
             bindings = <
 &trans  &trans            &trans            &trans      &trans      &trans                      &trans          &trans         &trans            &trans             &trans         &trans
 &trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6)      &kp LS(N7)     &kp LS(N8)        &kp LS(N9)         &kp LS(N0)     &trans
@@ -78,23 +78,13 @@
             >;
         };
 
-        layer_1 {
+        mouse {
             bindings = <
 &trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans           &trans            &trans        &trans      &trans                       &trans         &trans         &trans            &trans                &trans                 &trans
-&trans  &kp LS(N1)       &kp LS(NUMBER_2)  &kp LS(N3)    &kp LS(N4)  &kp LS(N5)                   &kp LS(N6)     &kp LS(N7)     &kp LS(N8)        &kp LS(N9)            &kp LS(N0)             &trans
-&trans  &kp EXCLAMATION  &kp AT            &kp HASH      &kp DOLLAR  &kp PERCENT  &trans  &trans  &kp CARET      &kp AMPERSAND  &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp PLUS         &kp MINUS         &kp ASTERISK  &kp SLASH   &kp EQUAL    &trans  &trans  &kp LS(GRAVE)  &kp BACKSLASH  &kp SINGLE_QUOTE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans
-&trans  &trans           &trans            &trans        &trans      &trans       &trans  &trans  &trans         &trans         &trans            &trans                &trans                 &trans
             >;
         };
     };
