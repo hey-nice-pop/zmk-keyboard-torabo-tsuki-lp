@@ -13,7 +13,7 @@
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <28 29>;
-            layers = <4>;
+            layers = <5>;
         };
     };
 
@@ -60,19 +60,19 @@
             bindings = <
 &none  &none               &none     &none     &none             &none                                         &none        &none  &none      &none             &none                 &none
 &none  &kp Q               &kp W     &kp E     &kp R             &kp T                                         &kp Y        &kp U  &kp I      &kp O             &kp P                 &none
-&none  &mt LEFT_CONTROL A  &kp S     &kp D     &kp F             &kp G        &none             &none          &kp H        &kp J  &kp K      &lt 6 L           &kp MINUS             &none
-&none  &mt LEFT_SHIFT Z    &kp X     &kp C     &kp V             &kp B        &kp TAB           &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT           &mt RIGHT_SHIFT FSLH  &none
+&none  &mt LEFT_CONTROL A  &kp S     &kp D     &kp F             &kp G        &none             &none          &kp H        &kp J  &kp K      &lt 7 L           &kp MINUS             &none
+&none  &mt LEFT_SHIFT Z    &kp X     &kp C     &kp V             &kp B        &kp TAB           &lt 5 SEMI     &kp N        &kp M  &kp COMMA  &kp DOT           &mt RIGHT_SHIFT FSLH  &none
 &none  &kp LCTRL           &kp LGUI  &kp LALT  &lt 4 LANGUAGE_2  &lt 2 SPACE  &lt 3 LANGUAGE_1  &kp BACKSPACE  &lt 1 ENTER  &none  &none      &kp SINGLE_QUOTE  &kp ESCAPE            &none
             >;
         };
 
         number {
             bindings = <
-&trans  &trans        &trans        &trans        &trans     &trans                                &trans          &trans  &trans  &trans           &trans   &trans
-&trans  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp ASTERISK                          &trans          &kp F7  &kp F8  &kp F9           &kp F12  &trans
-&trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS  &kp SLASH     &trans  &trans          &trans          &kp F4  &kp F5  &kp F6           &kp F11  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp PERCENT   &trans  &kp UP_ARROW    &trans          &kp F1  &kp F2  &kp F3           &kp F10  &trans
-&trans  &kp N0        &kp PERIOD    &kp COMMA     &trans     &trans        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &trans  &trans  &kp RIGHT_ARROW  &trans   &trans
+&trans  &trans        &trans        &trans        &trans     &trans                        &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &kp N7        &kp N8        &kp N9        &kp PLUS   &kp ASTERISK                  &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans
+&trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS  &kp SLASH     &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp PERCENT   &trans  &trans  &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &kp N0        &kp PERIOD    &kp COMMA     &trans     &trans        &trans  &trans  &trans  &trans          &trans          &trans           &trans  &trans
             >;
         };
 
@@ -96,6 +96,16 @@
             >;
         };
 
+        function {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans   &trans                   &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &kp F7  &kp F8  &kp F9  &kp F12  &kp F15                  &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans
+&trans  &kp F4  &kp F5  &kp F6  &kp F11  &kp F14  &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F10  &kp F13  &trans  &trans  &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans   &trans   &trans  &trans  &trans  &trans          &trans          &trans           &trans  &trans
+            >;
+        };
+
         bluetooth {
             bindings = <
 &trans       &trans  &trans  &trans  &trans  &trans                  &trans        &trans        &trans        &trans        &trans          &trans
@@ -110,7 +120,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK         &mkp RCLK  &mo 6   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK         &mkp RCLK  &mo 7   &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mission_control  &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans  &trans
             >;
