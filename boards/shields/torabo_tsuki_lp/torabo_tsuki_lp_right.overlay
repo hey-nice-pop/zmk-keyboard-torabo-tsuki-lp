@@ -20,7 +20,7 @@
           <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
     scroll_input_listener {
-        layers = <1 6>;
+        layers = <1 7>;
         process-next;
         input-processors
             = <&zip_xy_scaler 1 3>,
