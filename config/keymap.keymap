@@ -13,7 +13,7 @@
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <28 29>;
-            layers = <3>;
+            layers = <4>;
         };
     };
 
@@ -36,6 +36,21 @@
 
             label = "SCREEN_SHOT";
         };
+
+        mission_control: mission_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_wait_time 10>,
+                <&macro_tap>,
+                <&kp UP_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "MISSION_CONTROL";
+        };
     };
 
     keymap {
@@ -51,16 +66,6 @@
             >;
         };
 
-        marks {
-            bindings = <
-&trans  &trans               &trans       &trans     &trans     &trans                  &trans  &trans                &trans                 &trans         &trans  &trans
-&trans  &kp AMPERSAND        &kp ASTRK    &kp TILDE  &kp GRAVE  &trans                  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans  &trans
-&trans  &kp DOLLAR           &kp PERCENT  &kp CARET  &kp UNDER  &trans  &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &trans  &trans
-&trans  &mt LEFT_SHIFT EXCL  &kp AT       &kp HASH   &trans     &trans  &trans  &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans  &trans
-&trans  &trans               &trans       &trans     &trans     &trans  &trans  &trans  &trans  &trans                &trans                 &trans         &trans  &trans
-            >;
-        };
-
         number {
             bindings = <
 &trans  &trans        &trans        &trans        &trans     &trans                                &trans          &trans  &trans  &trans           &trans   &trans
@@ -68,6 +73,16 @@
 &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS  &kp SLASH     &trans  &trans          &trans          &kp F4  &kp F5  &kp F6           &kp F11  &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp PERCENT   &trans  &kp UP_ARROW    &trans          &kp F1  &kp F2  &kp F3           &kp F10  &trans
 &trans  &kp N0        &kp PERIOD    &kp COMMA     &trans     &trans        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &trans  &trans  &kp RIGHT_ARROW  &trans   &trans
+            >;
+        };
+
+        marks {
+            bindings = <
+&trans  &trans               &trans       &trans     &trans     &trans                  &trans  &trans                &trans                 &trans         &trans  &trans
+&trans  &kp AMPERSAND        &kp ASTRK    &kp TILDE  &kp GRAVE  &trans                  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans  &trans
+&trans  &kp DOLLAR           &kp PERCENT  &kp CARET  &kp UNDER  &trans  &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &trans  &trans
+&trans  &mt LEFT_SHIFT EXCL  &kp AT       &kp HASH   &trans     &trans  &trans  &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE       &trans  &trans
+&trans  &trans               &trans       &trans     &trans     &trans  &trans  &trans  &trans  &trans                &trans                 &trans         &trans  &trans
             >;
         };
 
@@ -93,11 +108,11 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mo 6   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK         &mkp RCLK  &mo 6   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mission_control  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans  &trans
             >;
         };
 
