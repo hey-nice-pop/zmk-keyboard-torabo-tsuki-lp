@@ -51,6 +51,36 @@
 
             label = "MISSION_CONTROL";
         };
+
+        mission_control_minus: mission_control_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_wait_time 10>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "MISSION_CONTROL_MINUS";
+        };
+
+        mission_control_plus: mission_control_plus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_wait_time 10>,
+                <&macro_tap>,
+                <&kp RIGHT_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "MISSION_CONTROL_PLUS";
+        };
     };
 
     keymap {
@@ -118,11 +148,11 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK         &mkp RCLK  &mo 7   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mission_control  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans            &trans                 &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans            &trans                 &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK               &mkp RCLK         &mo 7                  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mission_control_minus  &mission_control  &mission_control_plus  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans            &trans                 &trans  &trans
             >;
         };
 
