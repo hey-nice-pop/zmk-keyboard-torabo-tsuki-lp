@@ -158,11 +158,11 @@
 
         mouse_scroll {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK         &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mission_control  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans            &trans                 &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans            &trans                 &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 0   &mkp LCLK               &mkp RCLK         &trans                 &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mission_control_minus  &mission_control  &mission_control_plus  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans            &trans                 &trans  &trans
             >;
         };
     };
