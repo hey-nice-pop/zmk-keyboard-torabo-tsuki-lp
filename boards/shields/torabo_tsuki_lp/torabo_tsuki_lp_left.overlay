@@ -2,6 +2,16 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+&zip_temp_layer {
+    excluded-positions = <
+        33
+        35
+        47
+        48
+        49
+    >;
+};
+
 &trackball_listener {
     input-processors
         = <&zip_temp_layer 6 10000>,
