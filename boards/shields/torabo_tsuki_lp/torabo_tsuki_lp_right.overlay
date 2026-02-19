@@ -4,21 +4,14 @@
 
 &zip_temp_layer {
     excluded-positions = <
-        27
-        28
         32
-        33
         34
-        35
-        47
-        48
-        49
     >;
 };
 
 &trackball_listener {
     input-processors
-        = <&zip_temp_layer 6 3000>,
+        = <&zip_temp_layer 6 10000>,
           <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
     scroll_input_listener {
