@@ -6,6 +6,10 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
 
+&mt {
+    flavor = "balanced";
+};
+
 / {
     combos {
         compatible = "zmk,combos";
