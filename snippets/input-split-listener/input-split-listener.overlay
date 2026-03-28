@@ -1,4 +1,24 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 /{
+    input_processors {
+        trackpad_scroll_scaler_a: trackpad_scroll_scaler_a {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+
+        trackpad_scroll_scaler_b: trackpad_scroll_scaler_b {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -14,6 +34,7 @@
         device = <&pointing_device_split>;
         status = "okay";
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_scroll_scaler 1 100>;
+                           <&trackpad_scroll_scaler_a 1 8>,
+                           <&trackpad_scroll_scaler_b 1 8>;
      };
 };
