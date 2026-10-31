@@ -1,4 +1,5 @@
 #include <behaviors/hires_dial.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
     // receives dial events from the peripheral
@@ -17,6 +18,7 @@
     hires_dial_scroll_listener: hires_dial_scroll_listener {
         compatible = "zmk,input-listener";
         device = <&hires_dial_scroll>;
+        input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
 };
 
@@ -26,5 +28,5 @@
 
 // layers without sensor-bindings fall through to QWERTY
 &{/keymap/QWERTY} {
-    sensor-bindings = <&hires_dial_scroll 1 1>;
+    sensor-bindings = <&hires_dial_scroll 3 1>;
 };
