@@ -1,0 +1,4 @@
+name: hires-dial-listener
+append:
+  EXTRA_DTC_OVERLAY_FILE: hires-dial-listener.overlay
+  EXTRA_CONF_FILE: hires-dial-listener.conf

@@ -1,0 +1,62 @@
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    hires_dial: hires_dial@75 {
+        status = "okay";
+        compatible = "sekigon,hires-dial";
+        reg = <0x75>;
+        res-cpi = <1275>;
+        counts-per-revolution = <1275>;
+        motion-read-interval-ms = <8>;
+        motion-gpios = <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H0H1)>;
+        sleep1-enable;
+        sleep2-enable;
+    };
+};
+
+/ {
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&hires_dial>;
+        triggers-per-rotation = <20>;
+    };
+
+    // dial push switch (gpio0 19) is mapped to RC(3,6)
+    dial_push_kscan: dial_push_kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios = <&gpio0 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        wakeup-source;
+    };
+
+    composite_kscan: composite_kscan {
+        compatible = "zmk,kscan-composite";
+        rows = <5>;
+        columns = <7>;
+        wakeup-source;
+
+        matrix {
+            kscan = <&kscan0>;
+        };
+
+        dial_push {
+            kscan = <&dial_push_kscan>;
+            row-offset = <3>;
+            col-offset = <6>;
+        };
+    };
+
+    chosen {
+        zmk,kscan = &composite_kscan;
+    };
+};
+
+&physical_layout_s { kscan = <&composite_kscan>; };
+&physical_layout_m { kscan = <&composite_kscan>; };
+&physical_layout_l { kscan = <&composite_kscan>; };

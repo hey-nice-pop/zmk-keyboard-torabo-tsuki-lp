@@ -1,0 +1,24 @@
+#include <behaviors/hires_dial.dtsi>
+
+/ {
+    // receives dial events from the peripheral
+    remote_hires_dial: remote_hires_dial {
+        compatible = "sekigon,remote-hires-dial";
+        counts-per-revolution = <1275>;
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&remote_hires_dial>;
+        triggers-per-rotation = <20>;
+    };
+};
+
+&hires_dial_scroll {
+    sensor = <&remote_hires_dial>;
+};
+
+// layers without sensor-bindings fall through to QWERTY
+&{/keymap/QWERTY} {
+    sensor-bindings = <&hires_dial_scroll 5 1>;
+};
