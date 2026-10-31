@@ -12,6 +12,12 @@
         sensors = <&remote_hires_dial>;
         triggers-per-rotation = <20>;
     };
+
+    // scroll behavior reports input events from itself, so it needs a listener
+    hires_dial_scroll_listener: hires_dial_scroll_listener {
+        compatible = "zmk,input-listener";
+        device = <&hires_dial_scroll>;
+    };
 };
 
 &hires_dial_scroll {
@@ -20,5 +26,5 @@
 
 // layers without sensor-bindings fall through to QWERTY
 &{/keymap/QWERTY} {
-    sensor-bindings = <&hires_dial_scroll 5 1>;
+    sensor-bindings = <&hires_dial_scroll 1 1>;
 };
