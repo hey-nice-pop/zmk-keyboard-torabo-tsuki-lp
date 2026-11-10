@@ -28,6 +28,17 @@
         };
     };
 
+    behaviors {
+        lt_mclk: lt_mclk {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Layer-Tap Mouse Click";
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&mkp>;
+        };
+    };
+
     macros {
         screen_shot: screen_shot {
             compatible = "zmk,behavior-macro";
@@ -118,7 +129,7 @@
 &none  &none               &none     &none     &none        &none                                         &none        &none  &none      &none    &none                 &none
 &none  &kp Q               &kp W     &kp E     &kp R        &kp T                                         &kp Y        &kp U  &kp I      &kp O    &kp P                 &none
 &none  &mt LEFT_CONTROL A  &kp S     &kp D     &kp F        &kp G        &none             &none          &kp H        &kp J  &lt 7 K    &kp L    &kp MINUS             &none
-&none  &mt LEFT_SHIFT Z    &kp X     &kp C     &kp V        &kp B        &lt 4 TAB         &lt 5 SEMI     &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH  &none
+&none  &mt LEFT_SHIFT Z    &kp X     &kp C     &kp V        &kp B        &lt_mclk 4 MCLK   &lt 5 SEMI     &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT FSLH  &none
 &none  &kp LCTRL           &kp LGUI  &kp LALT  &lt 3 LANG1  &lt 2 SPACE  &language_toggle  &kp BACKSPACE  &lt 1 ENTER  &none  &none      &kp TAB  &kp ESCAPE            &none
             >;
         };

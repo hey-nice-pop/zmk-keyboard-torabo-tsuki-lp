@@ -1,5 +1,6 @@
 #include <behaviors/hires_dial.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     // receives dial events from the peripheral
@@ -26,7 +27,16 @@
     sensor = <&remote_hires_dial>;
 };
 
+&hires_dial_encoder {
+    sensor = <&remote_hires_dial>;
+};
+
 // layers without sensor-bindings fall through to QWERTY
 &{/keymap/QWERTY} {
     sensor-bindings = <&hires_dial_scroll 125 1>;
+};
+
+// holding the dial switches to the machine layer, where rotation adjusts volume
+&{/keymap/machine} {
+    sensor-bindings = <&hires_dial_encoder C_VOL_UP C_VOL_DN>;
 };
